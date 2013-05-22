@@ -3,9 +3,9 @@
 /**
  * Tiki Wiki controller.
  *
- * @category   Apps
- * @package    Tiki_Wiki
- * @subpackage Controllers
+ * @category   apps
+ * @package    tiki-wiki
+ * @subpackage controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2012 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
@@ -36,9 +36,9 @@
 /**
  * Tiki Wiki controller.
  *
- * @category   Apps
- * @package    Tiki_Wiki
- * @subpackage Controllers
+ * @category   apps
+ * @package    tiki-wiki
+ * @subpackage controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2012 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
