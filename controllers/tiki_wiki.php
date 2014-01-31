@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Tiki Wiki controller.
+ * Tiki Wiki CMS Groupware controller.
  *
  * @category   apps
  * @package    tiki-wiki
@@ -34,7 +34,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 /**
- * Tiki Wiki controller.
+ * Tiki Wiki CMS Groupware controller.
  *
  * @category   apps
  * @package    tiki-wiki
@@ -48,7 +48,7 @@
 class Tiki_Wiki extends ClearOS_Controller
 {
     /**
-     * Tiki Wiki summary view.
+     * Tiki Wiki CMS Groupware summary view.
      *
      * @return view
      */
