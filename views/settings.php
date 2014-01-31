@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Tiki Wiki settings view.
+ * Tiki Wiki CMS Groupware settings view.
  *
  * @category   apps
  * @package    tiki-wiki
