@@ -4,42 +4,62 @@
 // General information
 /////////////////////////////////////////////////////////////////////////////
 
-$app['basename'] = 'tiki_wiki';
-$app['version'] = '6.2.0.beta3';
+$app['basename'] = 'tiki';
+$app['version'] = '1.6.0';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
 $app['license'] = 'GPLv3';
 $app['license_core'] = 'LGPLv3';
-$app['description'] = lang('tiki_wiki_app_description');
+$app['description'] = lang('tiki_app_description');
 
 /////////////////////////////////////////////////////////////////////////////
 // App name and categories
 /////////////////////////////////////////////////////////////////////////////
 
-$app['name'] = lang('tiki_wiki_app_name');
+$app['name'] = lang('tiki_app_name');
 $app['category'] = lang('base_category_server');
 $app['subcategory'] = lang('base_subcategory_messaging_and_collaboration');
+
+/////////////////////////////////////////////////////////////////////////////
+// Controllers
+/////////////////////////////////////////////////////////////////////////////
+
+$app['controllers']['tiki']['title'] = $app['name'];
+$app['controllers']['settings']['title'] = lang('base_settings');
+$app['controllers']['upload']['title'] = lang('base_app_upload');
+$app['controllers']['advanced']['title'] = lang('base_app_advanced_settings');
 
 /////////////////////////////////////////////////////////////////////////////
 // Packaging
 /////////////////////////////////////////////////////////////////////////////
 
 $app['requires'] = array(
-    'app-network', 
-    'app-groups',
-    'app-users',
-    'app-mysql',
+    'app-webapp',
+    'app-system-database >= 1:1.5.30',
 );
 
 $app['core_requires'] = array(
-    'app-groups-core',
-    'app-users-core',
-    'app-mysql-core',
-    'tiki',
+    'app-webapp-core',
+    'app-system-database-core >= 1:1.5.30',
+    'webapp-tiki',
 );
 
 $app['core_directory_manifest'] = array(
-    '/var/clearos/tiki_wiki' => array(),
-    '/var/clearos/tiki_wiki/backup/' => array(),
+    '/var/clearos/tiki' => array(),
+    '/var/clearos/tiki/archive' => array(),
+    '/var/clearos/tiki/backup' => array(),
+);
+
+$app['core_file_manifest'] = array(
+    'webapp-tiki-flexshare.conf' => array(
+        'target' => '/etc/clearos/flexshare.d/webapp-tiki.conf',
+        'config' => TRUE,
+        'config_params' => 'noreplace'
+    ),
+    'webapp-tiki-httpd.conf' => array(
+        'target' => '/etc/httpd/conf.d/webapp-tiki.conf',
+        'config' => TRUE,
+        'config_params' => 'noreplace'
+    )
 );

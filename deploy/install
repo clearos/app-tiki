@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Create webroot
+mkdir -p /var/clearos/tiki/webroot
+
+# Active Fleshare
+/usr/sbin/flexshare -n webapp-tiki -a activate >/dev/null 2>&1
+
+# Initialize database
+/usr/sbin/systemdb tiki apache

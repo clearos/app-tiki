@@ -4,12 +4,12 @@
  * Tiki Wiki CMS Groupware controller.
  *
  * @category   apps
- * @package    tiki-wiki
+ * @package    tiki
  * @subpackage controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
- * @copyright  2012 ClearFoundation
+ * @copyright  2014 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
- * @link       http://www.clearfoundation.com/docs/developer/apps/tiki_wiki/
+ * @link       http://www.clearfoundation.com/docs/developer/apps/tiki/
  */
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -37,18 +37,18 @@
  * Tiki Wiki CMS Groupware controller.
  *
  * @category   apps
- * @package    tiki-wiki
+ * @package    tiki
  * @subpackage controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
- * @copyright  2012 ClearFoundation
+ * @copyright  2014 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
- * @link       http://www.clearfoundation.com/docs/developer/apps/tiki_wiki/
+ * @link       http://www.clearfoundation.com/docs/developer/apps/tiki/
  */
 
-class Tiki_Wiki extends ClearOS_Controller
+class Tiki extends ClearOS_Controller
 {
     /**
-     * Tiki Wiki CMS Groupware summary view.
+     * Tiki Wiki CMS Groupware default controller.
      *
      * @return view
      */
@@ -58,11 +58,27 @@ class Tiki_Wiki extends ClearOS_Controller
         // Load libraries
         //---------------
 
-        $this->lang->load('tiki_wiki');
+        $this->lang->load('tiki');
+        $this->load->library('tiki/Webapp_Driver');
 
-        // Load views
-        //-----------
+        // Load view data
+        //---------------
 
-        $this->page->view_form('tiki_wiki/settings', lang('tiki_wiki_app_name'));
+        try {
+            $is_initialized = $this->webapp_driver->is_initialized();
+        } catch (\Exception $e) {
+            $this->page->view_exception($e);
+            return;
+        }
+
+        // Load controllers
+        //-----------------
+
+        if (!$is_initialized)
+            redirect('/tiki/initialize');
+
+        $views = array('tiki/overview', 'tiki/upload', 'tiki/settings', 'tiki/advanced');
+
+        $this->page->view_controllers($views, lang('tiki_app_name'));
     }
 }

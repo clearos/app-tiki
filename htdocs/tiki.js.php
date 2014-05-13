@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Tiki Wiki CMS Groupware settings view.
+ * Tiki Wiki CMS Groupware Javascript helper.
  *
  * @category   apps
- * @package    tiki-wiki
- * @subpackage views
+ * @package    tiki
+ * @subpackage javascript
  * @author     ClearFoundation <developer@clearfoundation.com>
- * @copyright  2011 ClearFoundation
+ * @copyright  2014 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
- * @link       http://www.clearfoundation.com/docs/developer/apps/tiki_wiki/
+ * @link       http://www.clearfoundation.com/docs/developer/apps/tiki/
  */
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -27,25 +27,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.  
 //  
-///////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////
-// Load dependencies
+// B O O T S T R A P
 ///////////////////////////////////////////////////////////////////////////////
 
-$this->lang->load('base');
-$this->lang->load('tiki_wiki');
+$bootstrap = getenv('CLEAROS_BOOTSTRAP') ? getenv('CLEAROS_BOOTSTRAP') : '/usr/clearos/framework/shared';
+require_once $bootstrap . '/bootstrap.php';
 
 ///////////////////////////////////////////////////////////////////////////////
-// Infobox
+// D E P E N D E N C I E S
 ///////////////////////////////////////////////////////////////////////////////
 
-$url = 'https://' . $_SERVER['SERVER_ADDR'] . '/';
-
-echo infobox_highlight(
-    lang('tiki_wiki_home_page'),
-    lang('tiki_wiki_help') . '<br><br>' .
-    "<p align='center'>" .  
-    anchor_custom($url, lang('tiki_wiki_go_to_home_page'), 'high', array('target' => '_blank')) . 
-    "</p>"
-);
+include clearos_app_base('webapp') . '/htdocs/webapp.js.php';
