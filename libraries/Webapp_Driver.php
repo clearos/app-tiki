@@ -221,7 +221,7 @@ class Webapp_Driver extends Webapp_Engine
 
         $config = $this->path_install . '/' . self::PATH_WEBROOT . '/' . self::PATH_LIVE . '/' . self::FILE_PRECONFIG;
 
-        $file = new File($config);
+        $file = new File($config, TRUE);
 
         if ($file->exists())
             $file->delete();

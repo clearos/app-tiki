@@ -1,7 +1,7 @@
 
 Name: app-tiki
 Epoch: 1
-Version: 1.6.0
+Version: 1.6.1
 Release: 1%{dist}
 Summary: Tiki Wiki CMS Groupware
 License: GPLv3
@@ -75,7 +75,6 @@ exit 0
 %defattr(-,root,root)
 /usr/clearos/apps/tiki/controllers
 /usr/clearos/apps/tiki/htdocs
-/usr/clearos/apps/tiki/views
 
 %files core
 %defattr(-,root,root)
