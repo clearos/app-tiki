@@ -11,7 +11,7 @@ Buildarch: noarch
 Requires: %{name}-core = 1:%{version}-%{release}
 Requires: app-base
 Requires: app-webapp
-Requires: app-system-database >= 1:1.5.30
+Requires: app-system-database >= 1:1.6.1
 
 %description
 Tiki Wiki CMS Groupware is a free and open source wiki-based, content management system and online office suite.
@@ -22,7 +22,7 @@ License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
 Requires: app-webapp-core
-Requires: app-system-database-core >= 1:1.5.30
+Requires: app-system-database-core >= 1:1.6.1
 Requires: webapp-tiki
 
 %description core
