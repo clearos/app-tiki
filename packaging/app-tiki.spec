@@ -1,7 +1,7 @@
 
 Name: app-tiki
 Epoch: 1
-Version: 1.6.5
+Version: 2.0.14
 Release: 1%{dist}
 Summary: Tiki Wiki CMS Groupware
 License: GPLv3
@@ -14,7 +14,7 @@ Requires: app-webapp
 Requires: app-system-database >= 1:1.6.1
 
 %description
-Tiki Wiki CMS Groupware is a free and open source wiki-based, content management system and online office suite.
+Tiki Wiki CMS Groupware is the Free / Libre / Open Source Web Application with the most built-in features.
 
 %package core
 Summary: Tiki Wiki CMS Groupware - Core
@@ -26,7 +26,7 @@ Requires: app-system-database-core >= 1:1.6.1
 Requires: webapp-tiki
 
 %description core
-Tiki Wiki CMS Groupware is a free and open source wiki-based, content management system and online office suite.
+Tiki Wiki CMS Groupware is the Free / Libre / Open Source Web Application with the most built-in features.
 
 This package provides the core API and libraries.
 
@@ -37,7 +37,7 @@ This package provides the core API and libraries.
 %install
 mkdir -p -m 755 %{buildroot}/usr/clearos/apps/tiki
 cp -r * %{buildroot}/usr/clearos/apps/tiki/
-
+rm -f %{buildroot}/usr/clearos/apps/tiki/readme.md
 install -d -m 0755 %{buildroot}/var/clearos/tiki
 install -d -m 0755 %{buildroot}/var/clearos/tiki/archive
 install -d -m 0755 %{buildroot}/var/clearos/tiki/backup
@@ -78,6 +78,7 @@ exit 0
 
 %files core
 %defattr(-,root,root)
+%doc readme.md
 %exclude /usr/clearos/apps/tiki/packaging
 %dir /usr/clearos/apps/tiki
 %dir /var/clearos/tiki
