@@ -18,7 +18,7 @@ Tiki Wiki CMS Groupware is the Free / Libre / Open Source Web Application with t
 
 %package core
 Summary: Tiki Wiki CMS Groupware - Core
-License: LGPLv3
+License: LGPLv2.1
 Group: ClearOS/Libraries
 Requires: app-base-core
 Requires: app-webapp-core
