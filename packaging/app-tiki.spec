@@ -86,5 +86,6 @@ exit 0
 /usr/clearos/apps/tiki/deploy
 /usr/clearos/apps/tiki/language
 /usr/clearos/apps/tiki/libraries
+/usr/clearos/apps/tiki/readme.md
 %config(noreplace) /etc/clearos/flexshare.d/webapp-tiki.conf
 %config(noreplace) /etc/httpd/conf.d/webapp-tiki.conf
